@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/hola")
 public class HolaController {
 
-    @Value("username")
-    public String username;
+
 
     @GetMapping
     public String dimeHola(){
+        String username = System.getenv("username");
         String message = "Hola Amigo!" + username;
         return message;
     }
